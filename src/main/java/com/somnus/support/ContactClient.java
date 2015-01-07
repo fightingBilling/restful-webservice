@@ -20,22 +20,22 @@ public class ContactClient {
 		Client client = Client.create();
 		WebResource resource = client.resource("http://localhost:8080/restful-web/service/contacts");
 		
-		System.out.println("===== Get huangyim =====");
-		getOneContact(resource, "huangyim");
+		System.out.println("===== 获得一个对象 =====");
+		getOneContact(resource, "1");
 		//////////////////////////////////////////////////////
-		System.out.println("===== Create foo =====");
-		postForm(resource, "foo", "bar");
+		System.out.println("===== 通过表单再创建一个对象 =====");
+		postForm(resource, "2", "Smile");
 		//////////////////////////////////////////////////////
 		Address[] addrs = {new Address("Shanghai", "Ke Yuan Street")};
-		Contact cnt = new Contact("guoqing", "Guo Qing", Arrays.asList(addrs));
-		System.out.println("===== Create guoqing =====");
+		Contact cnt = new Contact("3", "Simple", Arrays.asList(addrs));
+		System.out.println("===== 创建一个对象 =====");
 		putOneContact(resource, cnt);
 		//////////////////////////////////////////////////////
 		System.out.println("===== All Contacts =====");
 		getContacts(resource);
 		
-		System.out.println("===== Delete foo =====");
-		deleteOneContact(resource, "foo");
+		System.out.println("===== Delete one of Contacts =====");
+		deleteOneContact(resource, "2");
 		
 		System.out.println("===== All Contacts =====");
 		getContacts(resource);
@@ -51,10 +51,10 @@ public class ContactClient {
 		
 		// 2, get response and headers etc, wrapped in ClientResponse
 		ClientResponse response = r.get(ClientResponse.class);
-		System.out.println( response.getStatus() );
-		System.out.println( response.getHeaders().get("Content-Type") );
+		System.out.println("Status:" + response.getStatus() );
+		System.out.println("Content-Type：" + response.getHeaders().get("Content-Type") );
 		String entity = response.getEntity(String.class);
-		System.out.println(entity);
+		System.out.println("responseText：" + entity);
 		
 		// 3, get JAXB response
 		GenericType<List<Contact>> genericType = new GenericType<List<Contact>>() {};

@@ -29,7 +29,7 @@ public class ContactStore {
 			new Address("Shanghai", "Long Hua Street"),
 			new Address("Shanghai", "Dong Quan Street")
 		};
-		Contact cHuang = new Contact("huangyim", "Huang Yi Ming", Arrays.asList(addrs));
+		Contact cHuang = new Contact("1", "Somnus", Arrays.asList(addrs));
 		store.put(cHuang.getId(), cHuang);
 	}
 }
