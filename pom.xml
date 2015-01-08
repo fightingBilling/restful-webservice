@@ -99,7 +99,7 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
-		<!-- log -->
+		<!--**************** logback and slf4j **************** -->
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
@@ -125,7 +125,7 @@
 			<artifactId>logback-access</artifactId>
 			<version>${logback.version}</version>
 		</dependency>
-
+		<!--**************** logback and slf4j **************** -->
 		<!-- servlet & jsp -->
 		<dependency>
 			<groupId>javax.servlet</groupId>
