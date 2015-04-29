@@ -18,7 +18,7 @@ public class ContactClient {
 	
 	public static void main(String[] args) {
 		Client client = Client.create();
-		WebResource resource = client.resource("http://localhost:8080/restful-web/service/contacts");
+		WebResource resource = client.resource("http://localhost:8080/restful-webservice/service/contacts");
 		
 		System.out.println("===== 获得一个对象 =====");
 		getOneContact(resource, "1");

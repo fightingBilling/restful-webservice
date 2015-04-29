@@ -4,7 +4,7 @@
 	<groupId>com.somnus</groupId>
 	<artifactId>restful-webservice</artifactId>
 	<packaging>war</packaging>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>8.0.1</version>
 
 	<name>restful-web Maven Webapp</name>
 	<url>http://maven.apache.org</url>
