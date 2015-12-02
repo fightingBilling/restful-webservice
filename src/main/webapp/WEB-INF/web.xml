@@ -24,6 +24,6 @@
     <servlet-name>JerseyServlet</servlet-name>
     <url-pattern>/service/*</url-pattern>
   </servlet-mapping>
-  <!-- http://localhost:8080/restful-webservice/service/application.wadl -->
+  <!-- http://localhost:8080/restful/service/application.wadl -->
   
 </web-app>

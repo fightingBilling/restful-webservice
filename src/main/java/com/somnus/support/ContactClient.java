@@ -6,6 +6,9 @@ import java.util.List;
 import javax.ws.rs.core.MediaType;
 import javax.xml.bind.JAXBElement;
 
+import org.junit.Before;
+import org.junit.Test;
+
 import com.somnus.domain.Address;
 import com.somnus.domain.Contact;
 import com.sun.jersey.api.client.Client;
@@ -15,31 +18,56 @@ import com.sun.jersey.api.client.WebResource;
 import com.sun.jersey.api.representation.Form;
 
 public class ContactClient {
-	
-	public static void main(String[] args) {
-		Client client = Client.create();
-		WebResource resource = client.resource("http://localhost:8080/restful-webservice/service/contacts");
-		
-		System.out.println("===== 获得一个对象 =====");
-		getOneContact(resource, "1");
-		//////////////////////////////////////////////////////
-		System.out.println("===== 通过表单再创建一个对象 =====");
-		postForm(resource, "2", "Smile");
-		//////////////////////////////////////////////////////
-		Address[] addrs = {new Address("Shanghai", "Ke Yuan Street")};
-		Contact cnt = new Contact("3", "Simple", Arrays.asList(addrs));
-		System.out.println("===== 创建一个对象 =====");
-		putOneContact(resource, cnt);
-		//////////////////////////////////////////////////////
-		System.out.println("===== All Contacts =====");
-		getContacts(resource);
-		
-		System.out.println("===== Delete one of Contacts =====");
-		deleteOneContact(resource, "2");
-		
-		System.out.println("===== All Contacts =====");
-		getContacts(resource);
-	}
+    
+    WebResource resource = null;
+    
+    @Before
+    public void setUp(){
+        Client client = Client.create();
+        resource = client.resource("http://localhost:8080/restful/service/contacts");
+    }
+    
+    /**
+     * 获得一个对象
+     */
+    @Test
+    public void getOneContact(){
+        getOneContact(resource, "1");
+    }
+    
+    /**
+     * 通过表单再创建一个对象
+     */
+    @Test
+    public void postForm(){
+        postForm(resource, "2", "Smile");
+    }
+    
+    /**
+     * 创建一个对象
+     */
+    @Test
+    public void putOneContact(){
+        Address[] addrs = {new Address("Shanghai", "Ke Yuan Street")};
+        Contact cnt = new Contact("3", "Simple", Arrays.asList(addrs));
+        putOneContact(resource, cnt);
+    }
+    
+    /**
+     * All Contacts
+     */
+    @Test
+    public void getContacts(){
+        getContacts(resource);
+    }
+    
+    /**
+     * Delete one of Contacts
+     */
+    @Test
+    public void deleteOneContact(){
+        deleteOneContact(resource, "2");
+    }
 	
 	public static void getContacts(WebResource r) {
 		// 1, get response as plain text
