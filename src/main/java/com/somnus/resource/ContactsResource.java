@@ -15,6 +15,12 @@ import com.somnus.domain.Contact;
 import com.somnus.support.ContactStore;
 import com.sun.jersey.api.NotFoundException;
 
+/*
+ * {
+ *   "id":"10",
+ *   "name":"ruo"
+ * }
+ */
 @Path("/contacts")
 public class ContactsResource {
 	
