@@ -1,12 +1,16 @@
 package com.somnus.domain;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
-public class Contact {
+public class Contact implements Serializable{
+	
+	private static final long serialVersionUID = 1L;
+	
 	private String id;
 	private String name;
 	private List<Address> addresses;
