@@ -152,6 +152,12 @@
 			<version>2.2</version>
 			<scope>provided</scope>
 		</dependency>
+		
+		<dependency>
+			<groupId>com.somnus.rest.core</groupId>
+			<artifactId>rest-core</artifactId>
+			<version>3.2.0</version>
+		</dependency>
 	</dependencies>
 	<!-- 指定Maven仓库 -->
 	<repositories>
