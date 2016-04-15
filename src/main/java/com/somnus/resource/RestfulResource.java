@@ -6,4 +6,5 @@ import com.somnus.domain.Response;
 public interface RestfulResource {
 	
 	public Response getAccount(Request request);
+	
 }

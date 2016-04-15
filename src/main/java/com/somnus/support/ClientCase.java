@@ -1,6 +1,7 @@
 package com.somnus.support;
 
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response.Status;
 
 import org.junit.Test;
 
@@ -25,6 +26,10 @@ public class ClientCase {
 		ClientResponse response = webResource.entity(new Request("admin","123456"),
 				MediaType.APPLICATION_JSON).post(ClientResponse.class);
 		System.out.println(response.getStatus());
+		if(response.getStatus() == Status.OK.getStatusCode()){
+			Response r =  response.getEntity(Response.class);
+			System.out.println(r);
+        }
 	}
 	
 	private static final String BASE_URL = "http://120.26.68.243:8080/restful/service/";
