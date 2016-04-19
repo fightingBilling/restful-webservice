@@ -153,19 +153,14 @@
 			<scope>provided</scope>
 		</dependency>
 		
-		<dependency>
-			<groupId>com.somnus.rest.core</groupId>
-			<artifactId>rest-core</artifactId>
-			<version>3.2.0</version>
-		</dependency>
 	</dependencies>
 	<!-- 指定Maven仓库 -->
 	<repositories>
 		<!-- oschina的maven仓库 -->
 		<repository>
-			<id>oschinaRepository</id>
+			<id>repository</id>
 			<name>local private nexus</name>
-			<url>http://maven.oschina.net/content/groups/public/</url>
+			<url>http://maven.wozsz.com:88/content/groups/public/</url>
 			<releases>
 				<enabled>true</enabled>
 			</releases>
