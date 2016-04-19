@@ -160,7 +160,7 @@
 		<repository>
 			<id>repository</id>
 			<name>local private nexus</name>
-			<url>http://maven.wozsz.com:88/content/groups/public/</url>
+			<url>http://maven.oschina.net/content/groups/public/</url>
 			<releases>
 				<enabled>true</enabled>
 			</releases>
@@ -168,11 +168,6 @@
 				<enabled>true</enabled>
 			</snapshots>
 		</repository>
-
-		<!-- 官方maven仓库 -->
-		<!-- <repository> <id>maven</id> <name>Maven Repository Switchboard</name> 
-			<layout>default</layout> <url>http://repo1.maven.org/maven2</url> <snapshots> 
-			<enabled>true</enabled> </snapshots> </repository> -->
 	</repositories>
 
 	<!-- 指定maven plugin仓库 -->
