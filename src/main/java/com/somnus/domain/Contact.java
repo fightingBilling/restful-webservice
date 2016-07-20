@@ -7,16 +7,17 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
-public class Contact implements Serializable{
-	
+public class Contact implements Serializable {
+
 	private static final long serialVersionUID = 1L;
-	
+
 	private String id;
 	private String name;
 	private List<Address> addresses;
-	
-	public Contact() {}
-	
+
+	public Contact() {
+	}
+
 	public Contact(String id, String name, List<Address> addresses) {
 		this.id = id;
 		this.name = name;
@@ -39,7 +40,7 @@ public class Contact implements Serializable{
 		this.name = name;
 	}
 
-	@XmlElement(name="address")
+	@XmlElement(name = "address")
 	public List<Address> getAddresses() {
 		return addresses;
 	}
@@ -47,5 +48,5 @@ public class Contact implements Serializable{
 	public void setAddresses(List<Address> addresses) {
 		this.addresses = addresses;
 	}
-	
+
 }

@@ -13,17 +13,17 @@ import com.somnus.resource.RestfulResource;
 
 @Path("/com.somnus.resource.RestfulResource")
 @Component
-public class RestfulResourceImpl implements RestfulResource{
-	
+public class RestfulResourceImpl implements RestfulResource {
+
 	@Path("/getAccount")
-    @POST
-    @Produces(MediaType.APPLICATION_JSON)
-    @Override
-    public Response getAccount(Request request) {
+	@POST
+	@Produces(MediaType.APPLICATION_JSON)
+	@Override
+	public Response getAccount(Request request) {
 		Response response = new Response();
-		response.setUsername("$"+request.getUsername()+"$");
-		response.setPassword("$"+request.getPassword()+"$");
+		response.setUsername("$" + request.getUsername() + "$");
+		response.setPassword("$" + request.getPassword() + "$");
 		return response;
 	}
-	
+
 }

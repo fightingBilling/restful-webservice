@@ -5,15 +5,16 @@ import java.io.Serializable;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
-public class Address implements Serializable{
-	
+public class Address implements Serializable {
+
 	private static final long serialVersionUID = 1L;
-	
+
 	private String city;
 	private String street;
-	
-	public Address() {}
-	
+
+	public Address() {
+	}
+
 	public Address(String city, String street) {
 		this.city = city;
 		this.street = street;
@@ -34,5 +35,5 @@ public class Address implements Serializable{
 	public void setStreet(String street) {
 		this.street = street;
 	}
-	
+
 }

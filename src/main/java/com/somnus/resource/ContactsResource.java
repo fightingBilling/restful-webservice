@@ -23,16 +23,16 @@ import com.sun.jersey.api.NotFoundException;
  */
 @Path("/contacts")
 public class ContactsResource {
-	
+
 	@GET
 	@Path("getContacts")
-	@Produces({MediaType.APPLICATION_JSON})
+	@Produces({ MediaType.APPLICATION_JSON })
 	public List<Contact> getContacts() {
 		List<Contact> contacts = new ArrayList<Contact>();
-		contacts.addAll( ContactStore.getStore().values() );
+		contacts.addAll(ContactStore.getStore().values());
 		return contacts;
 	}
-	
+
 	@GET
 	@Path("count")
 	@Produces(MediaType.TEXT_PLAIN)
@@ -40,27 +40,26 @@ public class ContactsResource {
 		int count = ContactStore.getStore().size();
 		return String.valueOf(count);
 	}
-	
+
 	@GET
 	@Path("{contact}")
-	@Produces({MediaType.APPLICATION_JSON})
-	public Contact getContact(
-			@PathParam("contact") String id) {
-	    Contact contact = ContactStore.getStore().get(id);
-        if(contact==null)
-            throw new NotFoundException("No such Contact.");
-        return contact;
+	@Produces({ MediaType.APPLICATION_JSON })
+	public Contact getContact(@PathParam("contact") String id) {
+		Contact contact = ContactStore.getStore().get(id);
+		if (contact == null)
+			throw new NotFoundException("No such Contact.");
+		return contact;
 	}
-	
+
 	@POST
-    @Path("addContact")
-    @Produces({MediaType.APPLICATION_JSON})
-    @Consumes({MediaType.APPLICATION_JSON})
-    public List<Contact> addContact(Contact contact) {
-	    List<Contact> contacts = new ArrayList<Contact>();
-        contacts.addAll( ContactStore.getStore().values() );
-        contacts.add(contact);
-        return contacts;
-    }
-	
+	@Path("addContact")
+	@Produces({ MediaType.APPLICATION_JSON })
+	@Consumes({ MediaType.APPLICATION_JSON })
+	public List<Contact> addContact(Contact contact) {
+		List<Contact> contacts = new ArrayList<Contact>();
+		contacts.addAll(ContactStore.getStore().values());
+		contacts.add(contact);
+		return contacts;
+	}
+
 }

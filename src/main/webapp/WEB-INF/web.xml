@@ -14,10 +14,12 @@
   <servlet>
     <servlet-name>JerseyServlet</servlet-name>
     <servlet-class>com.sun.jersey.spi.spring.container.servlet.SpringServlet</servlet-class>
-    <!-- <init-param>
+    <!--  这里因为和spring整合了就不再使用jersery自己定义的指定包了
+    <init-param>
       <param-name>com.sun.jersey.config.property.packages</param-name>
       <param-value>com.somnus.resource</param-value>
-    </init-param> -->
+    </init-param> 
+    -->
   </servlet>
   
   <servlet-mapping>
