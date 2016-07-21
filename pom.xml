@@ -160,7 +160,7 @@
 		<repository>
 			<id>repository</id>
 			<name>local private nexus</name>
-			<url>http://maven.oschina.net/content/groups/public/</url>
+			<url>http://maven.wozsz.com/content/groups/public/</url>
 			<releases>
 				<enabled>true</enabled>
 			</releases>
@@ -176,7 +176,7 @@
 		<pluginRepository>
 			<id>oschinaPluginRepository</id>
 			<name>local private nexus</name>
-			<url>http://maven.oschina.net/content/groups/public/</url>
+			<url>http://maven.wozsz.com/content/groups/public/</url>
 			<releases>
 				<enabled>true</enabled>
 			</releases>
