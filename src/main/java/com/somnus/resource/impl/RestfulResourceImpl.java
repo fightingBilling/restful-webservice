@@ -1,6 +1,7 @@
 package com.somnus.resource.impl;
 
 import javax.ws.rs.Consumes;
+import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
@@ -47,26 +48,33 @@ public class RestfulResourceImpl implements RestfulResource {
 
 	@Path("/getAccount3/{username}/{password}")
 	@GET
-	@Produces(MediaType.APPLICATION_JSON)
+	@Produces(MediaType.TEXT_HTML)
 	@Override
-	public Response getAccount3(@PathParam("username") String username,
+	public String getAccount3(
+			@PathParam("username") String username,
 			@PathParam("password") String password) {
-		Response response = new Response();
-		response.setUsername("$" + username + "$");
-		response.setPassword("$" + password + "$");
-		return response;
+		return new Response(username,password).toString();
 	}
 
 	@Path("/getAccount4")
 	@GET
-	@Produces(MediaType.APPLICATION_JSON)
+	@Produces(MediaType.TEXT_HTML)
 	@Override
-	public Response getAccount4(@QueryParam("username") String username,
+	public String getAccount4(//@GET和@QueryParam对应
+			@QueryParam("username") String username,
 			@QueryParam("password") String password) {
-		Response response = new Response();
-		response.setUsername("$" + username + "$");
-		response.setPassword("$" + password + "$");
-		return response;
+		return new Response(username,password).toString();
+	}
+	
+	@Path("/getAccount5")
+	@POST
+	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
+	@Produces(MediaType.TEXT_HTML)
+	@Override
+	public String getAccount5(//@POST和@FormParam对应
+			@FormParam("username") String username,
+			@FormParam("password") String password) {
+		return new Response(username,password).toString();
 	}
 
 }

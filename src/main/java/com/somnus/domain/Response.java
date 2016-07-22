@@ -11,6 +11,16 @@ public class Response implements Serializable {
 
 	private String username;
 	private String password;
+	
+	public Response() {
+		super();
+	}
+
+	public Response(String username, String password) {
+		super();
+		this.username = username;
+		this.password = password;
+	}
 
 	public void setUsername(String username) {
 		this.username = username;

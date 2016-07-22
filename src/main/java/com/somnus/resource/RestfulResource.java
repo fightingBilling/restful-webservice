@@ -11,8 +11,10 @@ public interface RestfulResource {
 	
 	public Response getAccount2(JAXBElement<Request> jaxb);
 	
-	public Response getAccount3(String username,String password);
+	public String getAccount3(String username,String password);
 	
-	public Response getAccount4(String username,String password);
+	public String getAccount4(String username,String password);
+	
+	public String getAccount5(String username,String password);
 
 }
