@@ -10,7 +10,7 @@
 	<url>http://maven.apache.org</url>
 
 	<properties>
-        <junit.version>4.11</junit.version>
+		<junit.version>4.11</junit.version>
 		<!-- jersey -->
 		<jersey.version>1.17.1</jersey.version>
 		<!-- spring -->
@@ -21,13 +21,13 @@
 	</properties>
 
 	<dependencies>
-        <!-- 加入junit依赖包 -->
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>${junit.version}</version>
-            <scope>test</scope>
-        </dependency>
+		<!-- 加入junit依赖包 -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit.version}</version>
+			<scope>test</scope>
+		</dependency>
 		<!-- spring -->
 		<dependency><!-- test -->
 			<groupId>org.springframework</groupId>
@@ -152,15 +152,13 @@
 			<version>2.2</version>
 			<scope>provided</scope>
 		</dependency>
-		
 	</dependencies>
-	<!-- 指定Maven仓库 -->
+
 	<repositories>
-		<!-- oschina的maven仓库 -->
 		<repository>
-			<id>repository</id>
-			<name>local private nexus</name>
-			<url>http://maven.wozsz.com/content/groups/public/</url>
+			<id>aliyun</id>
+			<name>aliyun</name>
+			<url>http://maven.aliyun.com/nexus/content/groups/public/</url>
 			<releases>
 				<enabled>true</enabled>
 			</releases>
@@ -170,13 +168,11 @@
 		</repository>
 	</repositories>
 
-	<!-- 指定maven plugin仓库 -->
 	<pluginRepositories>
-		<!-- oschina的maven plugin仓库 -->
 		<pluginRepository>
-			<id>oschinaPluginRepository</id>
-			<name>local private nexus</name>
-			<url>http://maven.wozsz.com/content/groups/public/</url>
+			<id>aliyun</id>
+			<name>aliyun</name>
+			<url>http://maven.aliyun.com/nexus/content/groups/public/</url>
 			<releases>
 				<enabled>true</enabled>
 			</releases>
@@ -187,54 +183,54 @@
 	</pluginRepositories>
 
 	<build>
-        <finalName>restful</finalName>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <target>1.7</target>
-                    <resource>1.7</resource>
-                </configuration>
-            </plugin>
+		<finalName>restful</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<target>1.7</target>
+					<resource>1.7</resource>
+				</configuration>
+			</plugin>
 
-            <plugin>
-                <groupId>org.mortbay.jetty</groupId>
-                <artifactId>jetty-maven-plugin</artifactId>
-                <version>8.1.9.v20130131</version>
-                <configuration>
-                    <webAppConfig>
-                        <contextPath>/${project.build.finalName}</contextPath>
-                    </webAppConfig>
-                    <httpConnector>
-                        <port>8081</port>
-                    </httpConnector>
-                    <scanIntervalSeconds>2</scanIntervalSeconds>
-                    <stopKey>shutdown</stopKey>
-                    <stopPort>9966</stopPort>
-                </configuration>
-            </plugin>
+			<plugin>
+				<groupId>org.mortbay.jetty</groupId>
+				<artifactId>jetty-maven-plugin</artifactId>
+				<version>8.1.9.v20130131</version>
+				<configuration>
+					<webAppConfig>
+						<contextPath>/${project.build.finalName}</contextPath>
+					</webAppConfig>
+					<httpConnector>
+						<port>8081</port>
+					</httpConnector>
+					<scanIntervalSeconds>2</scanIntervalSeconds>
+					<stopKey>shutdown</stopKey>
+					<stopPort>9966</stopPort>
+				</configuration>
+			</plugin>
 
-            <plugin>
-                <groupId>org.apache.tomcat.maven</groupId>
-                <artifactId>tomcat7-maven-plugin</artifactId>
-                <version>2.2</version>
-                <configuration>
-                    <path>/${project.build.finalName}</path>
-                    <port>8080</port>
-                    <uriEncoding>UTF-8</uriEncoding>
-                    <finalName>${project.build.finalName}</finalName>
-                    <server>tomcat7</server>
-                </configuration>
-                <executions>
-                    <execution>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>run</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
-    </build>
+			<plugin>
+				<groupId>org.apache.tomcat.maven</groupId>
+				<artifactId>tomcat7-maven-plugin</artifactId>
+				<version>2.2</version>
+				<configuration>
+					<path>/${project.build.finalName}</path>
+					<port>8080</port>
+					<uriEncoding>UTF-8</uriEncoding>
+					<finalName>${project.build.finalName}</finalName>
+					<server>tomcat7</server>
+				</configuration>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>run</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
 </project>
