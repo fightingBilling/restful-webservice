@@ -189,8 +189,8 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<configuration>
-					<target>1.7</target>
-					<resource>1.7</resource>
+					<target>1.8</target>
+					<resource>1.8</resource>
 				</configuration>
 			</plugin>
 
